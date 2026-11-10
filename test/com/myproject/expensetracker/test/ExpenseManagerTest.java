@@ -20,5 +20,22 @@ class ExpenseManagerTest {
 		em.add(1,"aaa",20);
 		assertEquals(1, em.getExpenses().size());
 	}
+	
+	@Test
+	public void deleteExpense() {
+		ExpenseManager em = new ExpenseManager();
+		em.add(1,"aaa",20);
+		em.delete(1);
+		assertEquals(0, em.getExpenses().size());
+	}
+	
+	@Test
+	public void deleteOneExpens() {
+		ExpenseManager em = new ExpenseManager();
+		em.add(1,"aaa",20);
+		em.add(2, "bbbb", 30);
+		em.delete(1);
+		assertEquals(1, em.getExpenses().size());
+	}
 
 }

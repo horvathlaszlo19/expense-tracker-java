@@ -19,7 +19,9 @@ public class ExpenseManager {
 		this.expenses.add(new Expense(id, descreption, amount));
 	}
 	
-	//delete
+	public void delete(int id) {
+		this.expenses.remove(getIndex(id));
+	}
 	
 	//update
 	
@@ -28,5 +30,21 @@ public class ExpenseManager {
 	//sum
 	
 	//sum with specific month
+	
+	private int getIndex(int id) {
+		int result = 0;
+		try {
+			for(int i=0; i < expenses.size(); i++) {
+				if(expenses.get(i).getId() == id) {
+					result = i;
+				}
+				
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
 
 }
