@@ -23,7 +23,13 @@ public class ExpenseManager {
 		this.expenses.remove(getIndex(id));
 	}
 	
-	//update
+	
+	public void update(int id, String descreption, double amount) {
+		Expense exp = expenses.get(getIndex(id));
+		exp.setDescreption(descreption);
+		exp.setAmount(amount);
+		
+	}
 	
 	//view all
 	
@@ -46,5 +52,6 @@ public class ExpenseManager {
 		}
 		return result;
 	}
+
 
 }

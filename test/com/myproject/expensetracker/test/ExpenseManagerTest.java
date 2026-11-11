@@ -37,5 +37,14 @@ class ExpenseManagerTest {
 		em.delete(1);
 		assertEquals(1, em.getExpenses().size());
 	}
+	
+	@Test
+	public void updateExpense() {
+		ExpenseManager em = new ExpenseManager();
+		em.add(1,"aaa",20);
+		em.update(1,"www",20);
+		assertEquals("www", em.getExpenses().get(0).getDescreption());
+	}
+	
 
 }
