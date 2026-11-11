@@ -46,5 +46,20 @@ class ExpenseManagerTest {
 		assertEquals("www", em.getExpenses().get(0).getDescreption());
 	}
 	
+	@Test
+	public void sumExpenses() {
+		ExpenseManager em = new ExpenseManager();
+		em.add(1,"aaa",20);
+		em.add(2, "bbbb", 30);
+		double sum = em.sumExpenses();
+		assertEquals(50, sum);
+	}
+	
+	@Test
+	public void sumExpenseWithEmptyList() {
+		ExpenseManager em = new ExpenseManager();
+		double sum = em.sumExpenses();
+		assertEquals(0, sum);
+	}
 
 }

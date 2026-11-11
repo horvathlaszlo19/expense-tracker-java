@@ -2,6 +2,7 @@ package com.myproject.expensetracker.expense;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class ExpenseManager {
 	
@@ -34,6 +35,12 @@ public class ExpenseManager {
 	//view all
 	
 	//sum
+	public double sumExpenses() {
+		Optional<Double> sum = expenses.stream()
+				.map(Expense::getAmount)
+				.reduce((element,acc) -> element + acc);
+		return sum.orElse(0.0);
+	}
 	
 	//sum with specific month
 	
@@ -52,6 +59,7 @@ public class ExpenseManager {
 		}
 		return result;
 	}
+
 
 
 }
