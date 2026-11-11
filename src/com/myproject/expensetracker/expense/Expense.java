@@ -1,6 +1,7 @@
 package com.myproject.expensetracker.expense;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Expense {
 	
@@ -36,6 +37,11 @@ public class Expense {
 	}
 	public int getId() {
 		return id;
+	}
+	
+	@Override
+	public String toString() {
+		return id + " " + date + " " + descreption + " " + amount ;	
 	}
 	
 	

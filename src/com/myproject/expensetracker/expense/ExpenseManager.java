@@ -32,9 +32,11 @@ public class ExpenseManager {
 		
 	}
 	
-	//view all
+	public void viewAll() {
+		expenses.stream().forEach(System.out::println);
+	}
 	
-	//sum
+	
 	public double sumExpenses() {
 		Optional<Double> sum = expenses.stream()
 				.map(Expense::getAmount)
